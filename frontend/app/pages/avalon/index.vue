@@ -3,7 +3,8 @@
     <!-- 頁面標題與操作區 -->
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
       <div>
-        <h1 class="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
+        <h1
+          class="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
           阿瓦隆 房間大廳
         </h1>
         <p class="text-gray-600 dark:text-gray-300 mt-2">
@@ -11,14 +12,11 @@
         </p>
       </div>
 
-      <button
-        @click="openCreateRoomModal"
-        class="px-6 py-3 rounded-xl font-medium text-white
+      <button @click="openCreateRoomModal" class="px-6 py-3 rounded-xl font-medium text-white
                  bg-gradient-to-r from-indigo-500 to-purple-600
                  hover:from-indigo-600 hover:to-purple-700
                  shadow-lg hover:shadow-xl transform hover:-translate-y-1
-                 transition-all duration-300"
-      >
+                 transition-all duration-300">
         + 創建房間
       </button>
     </div>
@@ -29,19 +27,12 @@
     </div>
 
     <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <NuxtLink
-        v-for="room in rooms"
-        :key="room.id"
-        :to="`/avalon/${room.id}`"
-        class="group relative rounded-2xl p-[1px]
+      <NuxtLink v-for="room in rooms" :key="room.id" :to="`/avalon/${room.id}`" class="group relative rounded-2xl p-[1px]
                  bg-gradient-to-br from-indigo-500 to-purple-600
                  hover:shadow-[0_20px_50px_rgba(99,102,241,0.3)]
-                 transition-all duration-500"
-      >
-        <div
-          class="h-full rounded-2xl p-6 bg-white/80 dark:bg-gray-800/90 backdrop-blur-xl
-                   transform group-hover:-translate-y-2 transition-all duration-300"
-        >
+                 transition-all duration-500">
+        <div class="h-full rounded-2xl p-6 bg-white/80 dark:bg-gray-800/90 backdrop-blur-xl
+                   transform group-hover:-translate-y-2 transition-all duration-300">
           <!-- 房間ID與密碼標示 -->
           <div class="flex items-center justify-between mb-4">
             <h3 class="text-xl font-bold">房間 {{ room.id }}</h3>
@@ -61,7 +52,8 @@
           </div>
 
           <!-- 進入提示 -->
-          <div class="mt-5 text-indigo-600 dark:text-indigo-400 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+          <div
+            class="mt-5 text-indigo-600 dark:text-indigo-400 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
             點擊進入 →
           </div>
         </div>
@@ -82,29 +74,18 @@
             <div class="space-y-5">
               <div>
                 <label class="block text-sm font-medium mb-2">是否設定密碼（選填）</label>
-                <input
-                  v-model="newRoomPassword"
-                  type="password"
-                  placeholder="留空表示公開房間"
-                  class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600
-                         bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                />
+                <input v-model="newRoomPassword" type="password" placeholder="留空表示公開房間" class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600
+                         bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
               </div>
 
               <div class="flex gap-4 pt-4">
-                <button
-                  type="button"
-                  @click="showCreateModal = false"
-                  class="flex-1 py-3 rounded-xl font-medium bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
-                >
+                <button type="button" @click="showCreateModal = false"
+                  class="flex-1 py-3 rounded-xl font-medium bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition">
                   取消
                 </button>
-                <button
-                  type="submit"
-                  class="flex-1 py-3 rounded-xl font-medium text-white
+                <button type="submit" class="flex-1 py-3 rounded-xl font-medium text-white
                            bg-gradient-to-r from-indigo-500 to-purple-600
-                           hover:from-indigo-600 hover:to-purple-700 transition"
-                >
+                           hover:from-indigo-600 hover:to-purple-700 transition">
                   創建房間
                 </button>
               </div>
@@ -128,7 +109,7 @@ const rooms = ref([
   { id: 1001, players: 7, createdAt: new Date(Date.now() - 1000 * 60 * 15), hasPassword: true },
   { id: 1002, players: 3, createdAt: new Date(Date.now() - 1000 * 60 * 30), hasPassword: false },
   { id: 1003, players: 10, createdAt: new Date(Date.now() - 1000 * 60 * 45), hasPassword: false },
-  { id: 1004, players: 5, createdAt: new Date(Date.now() - 1000 * 60 * 60), hasPassword: true },{ id: 1001, players: 7, createdAt: new Date(Date.now() - 1000 * 60 * 15), hasPassword: true },
+  { id: 1004, players: 5, createdAt: new Date(Date.now() - 1000 * 60 * 60), hasPassword: true }, { id: 1001, players: 7, createdAt: new Date(Date.now() - 1000 * 60 * 15), hasPassword: true },
   { id: 1002, players: 3, createdAt: new Date(Date.now() - 1000 * 60 * 30), hasPassword: false },
   { id: 1003, players: 10, createdAt: new Date(Date.now() - 1000 * 60 * 45), hasPassword: false },
   { id: 1004, players: 5, createdAt: new Date(Date.now() - 1000 * 60 * 60), hasPassword: true },
